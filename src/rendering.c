@@ -62,12 +62,15 @@ static void castRays(){
 	clearTerminal();
     for(int y = 0; y < SCREEN_HEIGHT; y++){
 		for(int x = 0; x < SCREEN_WIDTH; x++){
-			float sizeLine = (float)SCREEN_HEIGHT / distancesFromScreenToWalls[x];
+			float distance = distancesFromScreenToWalls[x];
+			float sizeLine = (float)SCREEN_HEIGHT / distance;
 			float wallTop = ((float)SCREEN_HEIGHT / 2) - (sizeLine / 2);
 			float wallBottom = ((float)SCREEN_HEIGHT / 2) + (sizeLine / 2);
 
-			if (y >= wallTop && y <= wallBottom)
+			if (y >= wallTop && y <= wallBottom && distance * 15 < 200){
+				setColor(subtractRGB((RGB){200,200,200}, (uint8_t)(distance * 15)));
 				printf("█");
+			}
 			else
 				printf(" ");
 		}

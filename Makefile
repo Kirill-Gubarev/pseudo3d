@@ -17,6 +17,7 @@ SOURCES = \
 		  $(SRC_DIR)/rendering.c\
 		  $(SRC_DIR)/events.c\
 		  $(SRC_DIR)/app.c\
+		  $(SRC_DIR)/rgb.c\
 
 OBJECTS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
 

@@ -18,3 +18,12 @@ void setInstantInputMode(char enable){
 void clearTerminal(){
 	printf("\033[2J\033[H");
 }
+void setColor(RGB color){
+	printf("\033[38;2;%u;%u;%um",color.r ,color.g, color.b);
+}
+void setCursorVisibility(char enable){
+	if(enable)
+		printf("\033[?25h");
+	else
+		printf("\033[?25l");
+}

@@ -7,6 +7,7 @@
 
 void appInit(){
     setInstantInputMode(1);
+	setCursorVisibility(0);
 	playerInit(10, 10, 0);
 }
 void appExec(){
@@ -15,5 +16,6 @@ void appExec(){
     }
 }
 void appTerminate(){
+	setCursorVisibility(1);
     setInstantInputMode(0);
 }
