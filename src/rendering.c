@@ -59,7 +59,7 @@ static void castRays(){
     for(int i = 0; i < SCREEN_WIDTH; i++){
         distancesFromScreenToWalls[i] = castRay(getPlayerX(), getPlayerY(), getPlayerAngle() + ANGLE_OFFSET * (i - (float)SCREEN_WIDTH/2));
     }
-	clearTerminal();
+	startPosTerminal();
     for(int y = 0; y < SCREEN_HEIGHT; y++){
 		for(int x = 0; x < SCREEN_WIDTH; x++){
 			float distance = distancesFromScreenToWalls[x];
@@ -67,8 +67,8 @@ static void castRays(){
 			float wallTop = ((float)SCREEN_HEIGHT / 2) - (sizeLine / 2);
 			float wallBottom = ((float)SCREEN_HEIGHT / 2) + (sizeLine / 2);
 
-			if (y >= wallTop && y <= wallBottom && distance * 15 < 200){
-				setColor(subtractRGB((RGB){200,200,200}, (uint8_t)(distance * 15)));
+			if (y >= wallTop && y <= wallBottom && 255 - (distance * 15) > 30){
+				setForegroundColor(RGBaddInt((RGB){255, 255, 255}, -distance * 15));
 				printf("█");
 			}
 			else
@@ -80,4 +80,3 @@ static void castRays(){
 void render(){
 	castRays();
 }
-

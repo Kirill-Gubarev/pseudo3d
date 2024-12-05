@@ -1,6 +1,8 @@
 #include "events.h"
 #include "stdio.h"
 #include "player.h"
+#include <sys/select.h>
+#include <unistd.h>
 
 char keyEvents(){
 	char ch = getchar();

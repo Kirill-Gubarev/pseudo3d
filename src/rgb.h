@@ -1,3 +1,5 @@
+#ifndef RGB_H
+#define RGB_H
 #include <stdint.h>
 typedef struct{
 	uint8_t r;
@@ -5,4 +7,5 @@ typedef struct{
 	uint8_t b;
 }RGB;
 
-RGB subtractRGB(RGB color, uint8_t num);
+RGB RGBaddInt(RGB color, int num);
+#endif//RGB_H

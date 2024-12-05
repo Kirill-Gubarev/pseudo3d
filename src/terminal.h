@@ -3,8 +3,13 @@
 #include "rgb.h"
 
 void setInstantInputMode(char enable);
+
 void clearTerminal();
-void setColor(RGB color);
+void startPosTerminal();
+void setBackgroundColor(RGB color);
+void setForegroundColor(RGB color);
+
 void setCursorVisibility(char enable);
+void setAltBuf(char enable);
 
 #endif//TERMINAL_H

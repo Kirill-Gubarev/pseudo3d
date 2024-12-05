@@ -2,7 +2,7 @@
 #define APP_H
 
 void appInit();
-void appExec();
 void appTerminate();
+void appExec();
 
 #endif//APP_H
